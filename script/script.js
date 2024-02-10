@@ -207,6 +207,18 @@ document.addEventListener("DOMContentLoaded", ()=>{
         btn.classList.remove("enable-btn");
     }
 
+    const inputMeadiaQuery = ()=>{
+
+        if(window.matchMedia("(max-width: 538px)").matches){
+            iconDiv.style.border = "1px solid blue";
+            iconDiv.style.borderLeft = "none";
+        }else{
+            iconDiv.style.border = "2px solid blue";
+            iconDiv.style.borderLeft = "none";
+        }
+
+    }
+
     // Initially, disable the button
     btn.disabled = true;
 
@@ -220,10 +232,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
     // Event listener for password input
     password.addEventListener("input",buttonStatus);
     password.addEventListener("focus",()=>{
-        iconDiv.style.border = "2px solid blue";
-        iconDiv.style.borderLeft = "none";
+        
         // iconDiv.classList.add("icon-div-border");
+        inputMeadiaQuery();
+
     });
+
     password.addEventListener("blur",()=>{
         iconDiv.style.border = "none";
     });
@@ -233,8 +247,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         togglePassword(icon); // pass icon div
 
         password.focus();
-        iconDiv.style.border = "2px solid blue";
-        iconDiv.style.borderLeft = "none";
+        inputMeadiaQuery();
+        
     });
     iconDiv.addEventListener("click",()=>{
         password.focus();
