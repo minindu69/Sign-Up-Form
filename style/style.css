@@ -60,7 +60,7 @@ input{
     color: rgb(110, 110, 110);
     /* color: rgb(183, 147, 255); */
     background-repeat: no-repeat;
-    background-position: right 8px center;
+    background-position: right 6px center;
     flex-grow: 1;
     letter-spacing: 0.05rem;
     border: 2px solid rgba(0, 0, 255, 0);
